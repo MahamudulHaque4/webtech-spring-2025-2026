@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Check</title>
+    <style>
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>Enter Age:</label>
+        <input type="number" id="age" />
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        const ageInput = document.getElementById("age");
+        const message = document.getElementById("message");
+
+        ageInput.addEventListener("input", function () {
+            const age = Number(this.value);
+
+            if (age < 40) {
+                message.textContent = "To be a part of the community, you need to at least 40";
+                message.style.color = "black";
+            } else if (age >= 40 && age <= 50) {
+                message.textContent = "You are the youngsters of this community";
+                message.style.color = "black";
+            } else if (age > 50) {
+                message.textContent = "Top level members of the group";
+                message.style.color = "red";
+            } else {
+                message.textContent = "";
+            }
+        });
+    </script>
+</body>
+
+</html>
