@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+
+<body>
+
+    <h2>JavaScript Tasks Output (Check Console)</h2>
+
+    <script>
+        // 1) Swap two variables 
+        let a = 5;
+        let b = 10;
+
+        console.log("Before Swap: a =", a, "b =", b);
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        console.log("After Swap: a =", a, "b =", b);
+
+        console.log("----------------------");
+
+        // 2) square
+        function square(n) {
+            return n * n;
+        }
+
+        for (let i = 1; i <= 10; i++) {
+            console.log("square(" + i + ") =", square(i));
+        }
+
+        console.log("----------------------");
+
+        // 3) Find largest 
+        let arr = [12, 45, 7, 89, 34, 99, 23];
+
+        let largest = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+
+        console.log("Largest number is:", largest);
+    </script>
+
+</body>
+
+</html>
