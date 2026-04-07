@@ -1,0 +1,7 @@
+p {
+    color: red;
+}
+
+tr:hover {
+    background: lightblue;
+}
