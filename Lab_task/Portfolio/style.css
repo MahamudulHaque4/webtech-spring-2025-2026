@@ -1,96 +1,374 @@
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- Global Resets --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #f4f7fb;
-    color: #222;
-    overflow-x: hidden;
+    background-color: #f4f7f6;
+    /* Softer, modern background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Keeps footer at the bottom */
 }
 
-/* Navbar */
-.navbar {
-    position: fixed;
+/* --- Header & Navigation (Left/Right Layout) --- */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
     top: 0;
-    width: 100%;
-    background: #1e3a8a;
-    color: white;
-    padding: 18px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     z-index: 1000;
 }
 
-.navbar ul {
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.2rem 20px;
+    display: flex;
+    justify-content: space-between;
+    /* Pushes logo left, nav right */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #282c34;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #007bff;
+    /* Accent color for 'Portfolio' */
+}
+
+nav ul {
     list-style: none;
     display: flex;
-    gap: 18px;
+    gap: 25px;
 }
 
-.navbar a {
-    color: white;
+nav a {
+    color: #555;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
 }
 
-/* Pages */
-.page {
-    display: none;
-    height: 100vh;
-    padding: 110px 40px 80px;
-    /* extra bottom space for footer */
-    overflow-y: auto;
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
-.page:target {
-    display: block;
+nav a:hover,
+nav a.active {
+    color: #007bff;
 }
 
-#home {
-    display: block;
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
 }
 
-/* Content */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    background: white;
-    padding: 35px;
-    border-radius: 16px;
-}
-
-.hero {
-    text-align: center;
+/* --- Main Content Area --- */
+main {
+    max-width: 900px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    flex: 1;
+    /* Pushes footer down */
 }
 
 h2 {
-    color: #1e3a8a;
+    color: #282c34;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 1.05rem;
+    color: #555;
     margin-bottom: 15px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+/* --- Project / Education Cards --- */
+.project-card {
+    border-left: 5px solid #007bff;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fdfdfd;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    /* Floating effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+    color: #282c34;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #282c34;
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* --- Contact Form Styles Upgraded --- */
+.contact-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.card {
-    background: #eff6ff;
-    padding: 20px;
-    border-left: 5px solid #1e3a8a;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Footer */
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #1e3a8a;
+.form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.gender-group {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fdfdfd;
+}
+
+.gender-group legend {
+    padding: 0 10px;
+    font-weight: 500;
+    color: #333;
+}
+
+.gender-group label {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    padding: 14px;
+    background: #007bff;
     color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- Personal Info Layout (No Lists) --- */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-row {
+    display: flex;
+    padding: 15px 20px;
+    background: #fdfdfd;
+    border-left: 5px solid #007bff;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-row:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.info-label {
+    font-weight: 600;
+    color: #282c34;
+    width: 180px;
+    /* Keeps all the labels perfectly aligned */
+    flex-shrink: 0;
+}
+
+.info-value {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+/* --- Home Page Hero Section --- */
+.home-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 10px;
+    min-height: 55vh;
+    /* Centers the text perfectly in the middle of the screen */
+}
+
+.hero-section {
+    max-width: 750px;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    color: #282c34;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    color: #555;
+    font-weight: 500;
+    border: none;
+    /* Removes the blue underline from the default h2 */
+    margin-bottom: 20px;
+    padding-bottom: 0;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* --- Call to Action Buttons --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background: #007bff;
+    color: #ffffff;
+    border: 2px solid #007bff;
+}
+
+.primary-btn:hover {
+    background: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.secondary-btn:hover {
+    background: rgba(0, 123, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Mobile Responsiveness for Hero */
+@media (max-width: 600px) {
+    .hero-name {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Mobile Responsiveness for Info Page */
+@media (max-width: 600px) {
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .info-label {
+        width: auto;
+        color: #007bff;
+    }
 }

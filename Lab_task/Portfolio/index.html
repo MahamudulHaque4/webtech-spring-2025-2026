@@ -2,96 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahamudul Haque | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <h1>My Portfolio</h1>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#personal">Personal Info</a></li>
-        </ul>
-    </div>
-
-    <!-- Home -->
-    <section id="home" class="page">
-        <div class="container hero">
-            <h2>Hello, I'm A.K Hasan Mahamudul Haque</h2>
-            <p>
-                Welcome to my portfolio website. Use the navigation menu to open different sections.
-            </p>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Mahamudul's <span>Portfolio</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="aboutme.html">About Me</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="info.html">Personal Info</a></li>
+                    <li><a href="achivement.html">Achievements</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- About -->
-    <section id="about" class="page">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I am a motivated and enthusiastic person who enjoys learning new things and improving my skills. Also i am a passionate fronted developer.
+    <main class="home-main">
+        <div class="hero-section">
+            <p class="greeting">Hello there, I'm</p>
+            <h1 class="hero-name">Mahamudul Haque</h1>
+            <h2 class="hero-title">Frontend-Focused Web Developer</h2>
+    
+            <p class="hero-description">
+                I specialize in crafting modern, interactive, and user-centric web applications.
+                With a strong foundation in <strong>JavaScript and React</strong>, and an expanding toolkit that includes
+                <strong>Node.js</strong>,
+                I focus on building solutions that are not only efficient but also make a positive impact—from e-commerce
+                platforms to community-driven tech initiatives.
             </p>
-        </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="page">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>School</h3>
-                    <p>Green View High School</p>
-                </div>
-                <div class="card">
-                    <h3>College</h3>
-                    <p>Nawabganj City Collage</p>
-                </div>
-                <div class="card">
-                    <h3>University</h3>
-                    <p>American International University of Bangladesh</p>
-                </div>
-                <div class="card">
-                    <h3>Achievements</h3>
-                    <p>Academic excellence and activities</p>
-                </div>
+    
+            <div class="hero-buttons">
+                <a href="achivement.html" class="btn primary-btn">View My Projects</a>
+                <a href="contact.php" class="btn secondary-btn">Let's Talk</a>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Personal Info -->
-    <section id="personal" class="page">
-        <div class="container">
-            <h2>Personal Information</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Name</h3>
-                    <p>A.K Hasan Mahamudul Haque</p>
-                </div>
-                <div class="card">
-                    <h3>Email</h3>
-                    <p>hraul183@gmail.com</p>
-                </div>
-                <div class="card">
-                    <h3>Phone</h3>
-                    <p>+8801XXXXXXXXX</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 My Portfolio. All rights reserved by Mahamudul.</p>
+    <footer>
+        <p>&copy; 2026 Mahamudul Haque. All rights reserved.</p>
     </footer>
-
 </body>
 
 </html>
