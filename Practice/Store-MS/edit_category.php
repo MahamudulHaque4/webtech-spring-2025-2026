@@ -1,5 +1,14 @@
 <?php
   require ('connectiondb.php');
+
+//   After Completeing Update its show a popup message and redirect to the Previous list page
+
+   if(isset($_GET['msg']) && $_GET['msg'] == 'updated'){
+        echo "<script>
+        alert('Your update was successfully done');
+        window.location.href = 'categorylist.php';
+    </script>";
+   }
 ?>
 
 <!DOCTYPE html>
@@ -43,11 +52,12 @@
 
     $result = mysqli_query($connection, $updateSql);
 
-     if ($result) {
-        echo "Record updated successfully";
-     } else {
+    if ($result) {
+         header("Location: edit_category.php?id=$new_category_id&msg=updated");
+         exit;
+    } else {
         echo "Error updating record: " . mysqli_error($connection);
-     }
+    }
     }
     ?>
 
@@ -62,6 +72,10 @@
         <input type="hidden" name="category_id" value="<?php echo isset($category_id) ? $category_id : ''; ?>">
 
         <input type="submit" name="update" value="Update">
+
+        <button type="button" onclick="window.location.href='categorylist.php'">
+            Cancel
+        </button>
     </form>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
     require ('connectiondb.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +43,7 @@
         <td><?php echo $row['category_entrydate']; ?> </td>
         <td>
            <a href="edit_category.php?id=<?php echo $category_id; ?>">Edit</a>
+           <a href="delete_category.php?id=<?php echo $category_id; ?>">Delete</a>
         </td>
      </tr>
     <?php
